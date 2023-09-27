@@ -13,7 +13,7 @@ const API_PUBLIC_KEY = environment.API_PUBLIC_KEY;
 const API_HASH_KEY = environment.API_PRIVATE_KEY + environment.API_PUBLIC_KEY;
 
 @Injectable()
-export class AuthenticationInterceptor implements HttpInterceptor {
+export class AuthInterceptor implements HttpInterceptor {
   constructor() {}
 
   intercept(

@@ -16,32 +16,22 @@ const API_URL = environment.API_URL;
 export class CharacterService {
   constructor(private http: HttpClient) { }
 
-  getCharacterList(page = 0): Observable<ResponseDataModel<CharacterModel>> {
-    return this.http
-      .get<ResponseModel<CharacterModel>>(`${API_URL}/characters`, {
-        params: {
-          limit: 10,
-          offset: page * 10,
-        },
-      }).
+  getCharacterList(name = '', page = 0): Observable<ResponseDataModel<CharacterModel>> {
+    let params: any = {
+      limit: 10,
+      offset: page * 10,
+    };
+
+    if (!!name) {
+      params = {
+        ...params,
+        nameStartsWith: name,
+      }
+    }
+
+    return this.http.get<ResponseModel<CharacterModel>>(`${API_URL}/characters`, { params }).
       pipe(
         map(({ data }) => {
-          return data;
-        })
-      );
-  }
-
-  filterCharacterByName(name: string, page: number = 0): Observable<ResponseDataModel<CharacterModel>> {
-    return this.http
-      .get<ResponseModel<CharacterModel>>(`${API_URL}/characters`, {
-        params: {
-          limit: 10,
-          offset: page * 10,
-          nameStartsWith: name,
-        },
-      })
-      .pipe(
-        map(({data}) => {
           return data;
         })
       );
@@ -51,7 +41,7 @@ export class CharacterService {
     return this.http
       .get<ResponseModel<CharacterModel>>(`${API_URL}/characters/${id}`)
       .pipe(
-        map(({data}) => {
+        map(({ data }) => {
           return data;
         })
       );
@@ -59,7 +49,7 @@ export class CharacterService {
 
   getEvents(resourceUrl: string): Observable<ResponseDataModel<string[]>> {
     return this.http.get<ResponseModel<any>>(resourceUrl).pipe(
-      map(({data}) => {
+      map(({ data }) => {
         return data;
       })
     );
@@ -67,7 +57,7 @@ export class CharacterService {
 
   getSeries(resourceUrl: string): Observable<ResponseDataModel<string[]>> {
     return this.http.get<ResponseModel<any>>(resourceUrl).pipe(
-      map(({data}) => {
+      map(({ data }) => {
         return data;
       })
     );
