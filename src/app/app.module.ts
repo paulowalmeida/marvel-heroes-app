@@ -5,6 +5,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthenticationInterceptor } from './core/interceptors/authentication.interceptor';
+import { FooterModule } from './core/components/footer/footer.module';
+import { HeaderModule } from './core/components/header/header.module';
+import { LoadingModule } from './shared/components/loading/loading.module';
 
 @NgModule({
   declarations: [
@@ -13,7 +16,10 @@ import { AuthenticationInterceptor } from './core/interceptors/authentication.in
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FooterModule,
+    HeaderModule,
+    LoadingModule
   ],
   providers: [
     {

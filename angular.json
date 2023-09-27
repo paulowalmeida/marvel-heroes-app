@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "marvel-heroes-app": {
+    "marvel-characters-app": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -12,12 +12,12 @@
       },
       "root": "",
       "sourceRoot": "src",
-      "prefix": "app",
+      "prefix": "mc",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/marvel-heroes-app",
+            "outputPath": "dist/marvel-characters-app",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -32,6 +32,9 @@
             "styles": [
               "src/styles.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": ["src/styles", "src/assets/"]
+            },
             "scripts": []
           },
           "configurations": {
@@ -65,10 +68,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "marvel-heroes-app:build:production"
+              "browserTarget": "marvel-characters-app:build:production"
             },
             "development": {
-              "browserTarget": "marvel-heroes-app:build:development"
+              "browserTarget": "marvel-characters-app:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -76,7 +79,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "marvel-heroes-app:build"
+            "browserTarget": "marvel-characters-app:build"
           }
         },
         "test": {

@@ -1,0 +1,15 @@
+.main {
+	&__container {
+		display: flex;
+		flex-direction: column;
+		max-height: calc(100vh - 32px);
+		height: calc(100vh - 32px);
+		align-items: stretch;
+		margin: 20px 42px 0px 42px;
+	}
+
+	&__content {
+		flex: auto;
+		overflow: auto;
+	}
+}

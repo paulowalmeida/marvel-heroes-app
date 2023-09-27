@@ -1,1 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+@import "_variables";
+
+
+* {
+	margin: 0px;
+	font-family: "Roboto", sans-serif;
+	box-sizing: border-box;
+}
+
+.spacer {
+	flex: 1 1 auto;
+}
+
+@media (max-width: 1024px) {
+	.hide-lg {
+		display: none;
+	}
+}
+
+@media (max-width: 768px) {
+	.hide-md {
+		display: none;
+	}
+}
