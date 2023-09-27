@@ -6,8 +6,8 @@ import {
   HttpInterceptor,
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { environment } from '@env';
 import { MD5 } from 'crypto-js';
+import { environment } from '../../../environments/environment';
 
 const API_PUBLIC_KEY = environment.API_PUBLIC_KEY;
 const API_HASH_KEY = environment.API_PRIVATE_KEY + environment.API_PUBLIC_KEY;
