@@ -30,7 +30,8 @@
 		</tbody>
 	</table>
 
-	<div class="pagination">
+	<div class="pagination"
+		*ngIf="totalChar > 10">
 		<div class="arrow arrow__back" [ngClass]="{'disabled':currentPage === 0}"></div>
 		<div class="page"
 			*ngFor="let page of pageCounter(); let i = index;"

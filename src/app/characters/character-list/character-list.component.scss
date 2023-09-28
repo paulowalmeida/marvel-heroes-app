@@ -80,13 +80,15 @@ table tbody tr {
 }
 
 .pagination {
-  justify-content: center;
+  text-align: center;
+  margin: 16px 0;
+  height: calc(25vh - 16px);
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-align: center;
   align-items: center;
-  gap: 20px;
-  margin-top: 25px;
-  margin-bottom: 16px;
 }
 
 .page {

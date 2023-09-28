@@ -39,10 +39,11 @@ export class CharacterService {
 
   getCharacterById(id: number): Observable<ResponseDataModel<CharacterModel>> {
     return this.http
-      .get<ResponseModel<CharacterModel>>(`${API_URL}/characters/${id}`)
+      .get<ResponseModel<ResponseDataModel<CharacterModel>>>(`${API_URL}/characters/${id}`)
       .pipe(
-        map(({ data }) => {
-          return data;
+        map(({ data: {results} }) => {
+          console.log(results[0]);
+          return results[0];
         })
       );
   }

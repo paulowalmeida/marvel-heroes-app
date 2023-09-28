@@ -16,6 +16,7 @@ export class CharacterListComponent implements OnInit {
   characterName: string = '';
   loading = true;
   totalPages: number = 0;
+  totalChar = 0;
   currentPage: number = 0;
   lastPage: number = 5;
 
@@ -59,6 +60,7 @@ export class CharacterListComponent implements OnInit {
     this.service.getCharacterList(this.characterName, pageNumber)
       .subscribe(({ results: list, total }) => {
         this.characterList = list;
+        this.totalChar = total;
 
         if (pageNumber > 0) {
           this.totalPages = Math.floor(total / 10);

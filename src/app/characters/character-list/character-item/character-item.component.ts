@@ -11,7 +11,7 @@ export class CharacterItemComponent {
   @Input() character: CharacterModel = <CharacterModel>{};
 
 
-  buildAvatarLink() {
+  buildAvatar() {
     return this.character.thumbnail.path + '.' + this.character.thumbnail.extension;
   }
 }

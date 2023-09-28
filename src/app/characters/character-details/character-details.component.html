@@ -1,0 +1,27 @@
+
+<a class="back" [routerLink]="['/']"><h3>Voltar</h3></a>
+
+<div class="detail__container">
+	<div class="character">
+		<img class="character__image" [src]="buildAvatar()">
+	</div>
+
+	<div class="data__content">
+		<h1 class="data__name">{{character.name}}</h1>
+
+		<div class="data__info">
+			<h2 class="info__description--title">Descrição</h2>
+			<h3 class="info__description--content">{{character.description ? character.description: 'Sem informações'}}</h3>
+		</div>
+
+		<div class="data__events">
+			<h2 class="info__events--title">Eventos</h2>
+			<h3 class="info__events--content" *ngFor="let event of character.events.items">{{event.name ? event.name : 'Sem informações'}}</h3>
+		</div>
+
+		<div class="data__series">
+			<h2 class="info__series--title">Séries</h2>
+			<h3 class="info__series--content" *ngFor="let serie of character.series.items">{{serie.name ? serie.name : 'Sem informações' }}</h3>
+		</div>
+	</div>
+</div>
