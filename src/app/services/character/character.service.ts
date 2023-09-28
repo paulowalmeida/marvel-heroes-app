@@ -47,20 +47,4 @@ export class CharacterService {
         })
       );
   }
-
-  getEvents(resourceUrl: string): Observable<ResponseDataModel<string[]>> {
-    return this.http.get<ResponseModel<any>>(resourceUrl).pipe(
-      map(({ data }) => {
-        return data;
-      })
-    );
-  }
-
-  getSeries(resourceUrl: string): Observable<ResponseDataModel<string[]>> {
-    return this.http.get<ResponseModel<any>>(resourceUrl).pipe(
-      map(({ data }) => {
-        return data;
-      })
-    );
-  }
 }
