@@ -89,6 +89,7 @@ table tbody tr {
   justify-content: center;
   -ms-flex-align: center;
   align-items: center;
+  column-gap: 16px;
 }
 
 .page {
@@ -126,5 +127,6 @@ table tbody tr {
 
   .pagination {
     margin-bottom: 24px;
+    column-gap: 4px;
   }
 }
