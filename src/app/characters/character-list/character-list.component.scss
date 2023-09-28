@@ -48,7 +48,6 @@ table tbody tr {
 }
 
 .column {
-
   &__character,
   &__series {
     width: 25%;
@@ -110,16 +109,16 @@ table tbody tr {
   background-color: $primary;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 426px) {
   table tbody tr {
     border-bottom: 2px solid $primary;
   }
 
-  .arrow-back {
+  .arrow__back {
     margin-right: 40px;
   }
 
-  .arrow-next {
+  .arrow__next {
     margin-left: 40px;
   }
 

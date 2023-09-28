@@ -9,4 +9,9 @@ import { CharacterModel } from '../../../shared/models/character.model';
 })
 export class CharacterItemComponent {
   @Input() character: CharacterModel = <CharacterModel>{};
+
+
+  buildAvatarLink() {
+    return this.character.thumbnail.path + '.' + this.character.thumbnail.extension;
+  }
 }

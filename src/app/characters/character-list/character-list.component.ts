@@ -47,23 +47,24 @@ export class CharacterListComponent implements OnInit {
   pageCounter() {
     const array = [
       this.currentPage,
-      this.currentPage++,
-      this.currentPage++,
-      this.currentPage++,
-      this.currentPage++,
+      this.currentPage + 1,
+      this.currentPage + 2,
+      this.currentPage + 3
     ];
     return array;
   }
 
   private getCharacters(pageNumber = 0) {
+    this.loading = true;
     this.service.getCharacterList(this.characterName, pageNumber)
       .subscribe(({ results: list, total }) => {
-        this.loading = false;
         this.characterList = list;
 
         if (pageNumber > 0) {
           this.totalPages = Math.floor(total / 10);
         }
+
+        this.loading = false;
       });
   }
 }

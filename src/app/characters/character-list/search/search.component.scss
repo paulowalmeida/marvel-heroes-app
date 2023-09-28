@@ -4,6 +4,7 @@ label {
   color: $primary;
   display: block;
 }
+
 input {
   width: 400px;
   border: 1px solid #a5a5a5;
@@ -11,4 +12,10 @@ input {
   padding: 5px;
   height: 31px;
   border-radius: 5px;
+}
+
+@media (max-width: 426px) {
+  input {
+    width: 342px;
+  }
 }

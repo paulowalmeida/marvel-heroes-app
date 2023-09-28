@@ -5,12 +5,14 @@ import { CharacterListComponent } from './character-list.component';
 import { SearchModule } from './search/search.module';
 import { LoadingModule } from '../../shared/components/loading/loading.module';
 import { CharacterItemModule } from './character-item/character-item.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [CharacterListComponent],
   imports: [
     CommonModule,
     SearchModule,
+    RouterModule,
     LoadingModule,
     CharacterItemModule
   ],

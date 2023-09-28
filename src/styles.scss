@@ -1,7 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import "_variables";
 
-
 * {
 	margin: 0px;
 	font-family: "Roboto", sans-serif;
@@ -12,14 +11,21 @@
 	flex: 1 1 auto;
 }
 
-@media (max-width: 1024px) {
-	.hide-lg {
+@media (max-width: 1280px) {
+	::-webkit-scrollbar {
 		display: none;
 	}
 }
 
 @media (max-width: 768px) {
-	.hide-md {
+	.hide-lg {
+		display: none;
+	}
+}
+
+@media (max-width: 426px) {
+	.hide-md,
+	.hide-lg {
 		display: none;
 	}
 }

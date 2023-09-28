@@ -1,0 +1,27 @@
+<td>
+	<img class="avatar" [src]="buildAvatarLink()">
+	{{character.name}}
+</td>
+
+<td class="center hide-md">
+	<ng-container *ngIf="character.series.available > 0; else noSeries">
+		<div *ngFor="let series of character.series.items | slice:0:3;">
+			{{series?.name}}
+		</div>
+	</ng-container>
+
+	<ng-template #noSeries>
+		Sem registros de séries
+	</ng-template>
+</td>
+
+<td class="hide-lg">
+	<ng-container *ngIf="character.events.available > 0; else noEvents">
+		<div *ngFor="let events of character.events.items | slice:0:3;">
+			{{events?.name}}
+		</div>
+	</ng-container>
+	<ng-template #noEvents>
+		Sem registros de eventos
+	</ng-template>
+</td>
