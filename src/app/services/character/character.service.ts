@@ -42,7 +42,6 @@ export class CharacterService {
       .get<ResponseModel<ResponseDataModel<CharacterModel>>>(`${API_URL}/characters/${id}`)
       .pipe(
         map(({ data: {results} }) => {
-          console.log(results[0]);
           return results[0];
         })
       );

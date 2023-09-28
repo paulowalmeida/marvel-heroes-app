@@ -16,12 +16,25 @@
 
 		<div class="data__events">
 			<h2 class="info__events--title">Eventos</h2>
-			<h3 class="info__events--content" *ngFor="let event of character.events.items">{{event.name ? event.name : 'Sem informações'}}</h3>
+			<ng-container *ngIf="character.events.items.length == 0; else showEvents;">
+				<h3 class="info__events--content">Sem informações</h3>
+			</ng-container>
+
+			<ng-template #showEvents>
+				<h3 class="info__events--content" *ngFor="let event of character.events.items">{{event.name}}</h3>
+			</ng-template>
 		</div>
 
 		<div class="data__series">
 			<h2 class="info__series--title">Séries</h2>
-			<h3 class="info__series--content" *ngFor="let serie of character.series.items">{{serie.name ? serie.name : 'Sem informações' }}</h3>
+
+			<ng-container *ngIf="character.series.items.length == 0; else showSeries;">
+				<h3 class="info__series--content">Sem informações</h3>
+			</ng-container>
+
+			<ng-template #showSeries>
+				<h3 class="info__series--content" *ngFor="let serie of character.series.items">{{serie.name}}</h3>
+			</ng-template>
 		</div>
 	</div>
 </div>
