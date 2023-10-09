@@ -20,6 +20,7 @@ export class CharacterService {
     let params: any = {
       limit: 10,
       offset: page * 10,
+      'Content-Type': 'application/json'
     };
 
     if (!!name) {
@@ -29,7 +30,7 @@ export class CharacterService {
       }
     }
 
-    return this.http.get<ResponseModel<CharacterModel>>(`${API_URL}/characters`, { params }).
+    return this.http.get<ResponseModel<CharacterModel>>(`${API_URL}/characters`, { params, }).
       pipe(
         map(({ data }) => {
           return data;
@@ -39,9 +40,9 @@ export class CharacterService {
 
   getCharacterById(id: number): Observable<ResponseDataModel<CharacterModel>> {
     return this.http
-      .get<ResponseModel<ResponseDataModel<CharacterModel>>>(`${API_URL}/characters/${id}`)
+      .get<ResponseModel<ResponseDataModel<CharacterModel>>>(`${API_URL}/characters/${id}`, { params: { 'Content-Type': 'application/json' } })
       .pipe(
-        map(({ data: {results} }) => {
+        map(({ data: { results } }) => {
           return results[0];
         })
       );
