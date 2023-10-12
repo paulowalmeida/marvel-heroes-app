@@ -20,7 +20,7 @@ export class AuthInterceptor implements HttpInterceptor {
     request: HttpRequest<unknown>,
     next: HttpHandler
   ): Observable<HttpEvent<unknown>> {
-    const ts = +new Date();
+    const ts = + new Date();
     const authReq = request.clone({
       params: request.params
         .set('ts', ts)
