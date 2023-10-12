@@ -19,8 +19,7 @@ export class CharacterService {
   getCharacterList(name = '', page = 0): Observable<ResponseDataModel<CharacterModel>> {
     let params: any = {
       limit: 10,
-      offset: page * 10,
-      'Content-Type': 'application/json'
+      offset: page * 10
     };
 
     if (!!name) {
